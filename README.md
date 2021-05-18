@@ -6,7 +6,7 @@ This repository has example scripts for calculating the observation bias in grav
 
 Feel free to use and change the parameters in the code for increasing/decreasing precision or for changing the sensitivity used for the detectors. Scripts have detailed explanation in them with in line comments.
 
-Required python packages: numpy, scipy, h5py, gwsurrogate, lal, time (for timing the runs). Install these first. Make sure you load the NRHybSur3dq8 waveforms by ```gwsurrogate.catalog.pull('NRHybSur3dq8').```
+Required python packages: numpy, scipy, h5py, gwsurrogate, lal, time (for timing the runs). Install these first. Make sure you load the NRHybSur3dq8 waveforms by ```gwsurrogate.catalog.pull('NRHybSur3dq8')```.
 
 
 calculateSNR.py calculates power signal-to-noise ratios generated in LIGO Hanford, LIGO Livingston and Virgo for a face-on oriented binary (inclination angle=0) ignoring the antenna factor which is 1 Gpc away and in the absence of redshift,on a grid of black hole masses. The current parameters for the code is 5<=m2<=99 and m2<=m1<=min(99,10\*m2) for integer m1 and m2. The code uses the PSD of the GW190412 event which is NOT provided in this repository. To use it download GW190412.tar from https://dcc.ligo.org/LIGO-P2000223/public/. Only the GW190412.h5 file is necessary. The output of this script is a .npy file for each detector. The computation takes about 20 mins for each detector with a laptop with 4 CPU cores at 2.8 GHz (not all the cores are fully used, so this is a conservative estimate). The outputs for the configuration here are also given which are SNRo3H1.npy, SNRo3L1.npy, SNRo3V1.npy. These have the values for the E_0 in the paper (see Eq. 4 or 9).
