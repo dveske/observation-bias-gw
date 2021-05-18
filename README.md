@@ -1,6 +1,6 @@
 # observation-bias-gw
 
-This repository has example scripts for calculating the observation bias in gravitational-wave detections.
+This repository has example scripts for calculating the observation bias in gravitational-wave detections. If you use them please cite as ...
 
 Feel free to use and change the parameters in the code for increasing/decreasing precision or for changing the sensitivity used for the detectors. Scripts have detailed explanation in them with in line comments.
 
