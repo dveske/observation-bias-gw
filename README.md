@@ -12,6 +12,6 @@ calculateSNR.py calculates power signal-to-noise ratios generated in LIGO Hanfor
 
 calculate_pdet takes the outputs of calculateSNR.py and calculates the detection probability for the mass grid with power SNR threshold 64 (=amplitude SNR 8) assuming uniform distribution in sky, uniform orientation for binary's plane and a r^2/(1+z)^4 distribution in distance which corresponds to uniform distribution in comoving volume with a constant local event rate density in the presence of redshift. The marginalization is done over 20 points in each angular dimension and 300 points in distance (total 48\*10^6) for each mass combination. Overall, with the evaluation in the mass space it considers order of 10^11 points. The computation takes about 1 hour with a laptop with 4 CPU cores at 2.8 GHz. (for this estimate CPU usage was around 20% so it the calculation was probably done with only one core, so this is probably a very conservative estimate for 4 cores)
 
-The two scripts complete their runs in about 2 hours for a 3 detector network considering about 10^11 points in the 7 dimensional paramter space with a laptop with 4 CPU cores at 2.8 GHz.
+The two scripts complete their runs in about 2 hours for a 3 detector network considering about 10^11 points in the 7 dimensional parameter space with a laptop with 4 CPU cores at 2.8 GHz.
 
 Questions to be sent to Doğa Veske dv2397@columbia.edu.
