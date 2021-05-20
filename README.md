@@ -2,7 +2,7 @@
 
 This repository has example scripts for calculating the observation bias in gravitational-wave detections for non-spinning black holes. 
 
-**If you use them please acknowledge by citing it as ...**
+**If you use them, please acknowledge by citing it as ...**
 
 Feel free to use and change the parameters in the code for increasing/decreasing precision or for changing the sensitivity used for the detectors. Scripts have detailed explanation in them with in line comments.
 
