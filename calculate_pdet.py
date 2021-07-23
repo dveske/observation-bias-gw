@@ -18,7 +18,7 @@ def fr(rs): #returns luminosity distance for a redshift
     return 3*10**5*(1+rs)*quad(d1,0,rs)[0]/H0
 fr=numpy.vectorize(fr)
 
-n=20 #the number of points in each dimension of the 4 dimensional angle grid (2 sky positions, 2 orbital orientation of the binary)
+n=15 #the number of points in each dimension of the 4 dimensional angle grid (2 sky positions, 2 orbital orientation of the binary)
 
 alpha=numpy.linspace(0,2*pi,num=n) #right ascension - uniform between 0,2pi
 psi=numpy.linspace(0,2*pi,num=n) #polarization angle - uniform between 0,2pi
@@ -63,12 +63,12 @@ zz=numpy.linspace(0,3.5,num=100000)
 rr=fr(zz) #calculate luminosity distances corresponding to redshifts up to 3.5
 
 pr=rr**2/(1+zz)**4
-r=numpy.random.choice(rr,size=300,p=pr/numpy.sum(pr)) #sample the distance points according to r^2/(1+z)^4 distribution
+r=numpy.random.choice(rr,size=1000,p=pr/numpy.sum(pr)) #sample the distance points according to r^2/(1+z)^4 distribution
 r=r[numpy.argsort(r)]
 z=numpy.array([zz[numpy.argsort(abs(ra-rr))[0]] for ra in r]) #find corresponding redshifts
 
 def c(i,j):#compute the detection probability with the HLV network at O3 sensitivity with detection threshold POWER SNR=64 (=amplitude SNR=8). Marginalized over the (20^4 x 300) points in the angle and distance grid
-    return numpy.sum((1000**2*numpy.outer((1+z)**al[int(numpy.round(100*j/i))-1]/r**2,(o3l[i,j]*anl+o3h[i,j]*anh+o3v[i,j]*anv)))>64)/(300*n**4) 
+    return numpy.sum((1000**2*numpy.outer((1+z)**al[int(numpy.round(100*j/i))-1]/r**2,(o3l[i,j]*anl+o3h[i,j]*anh+o3v[i,j]*anv)))>64)/(1000*n**4) 
 
 
 for j in range (5,100): #Consider small mass between [5,99] solar masses, in accordance with the SNR code
