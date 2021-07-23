@@ -59,8 +59,8 @@ for j in range (10,100):
     al[j]=res_1.x[0]
 
 pdet=numpy.zeros((100,100))
-zz=numpy.linspace(0,2,num=100000)
-rr=fr(zz) #calculate luminosity distances corresponding to redshifts up to 2
+zz=numpy.linspace(0,3.5,num=100000)
+rr=fr(zz) #calculate luminosity distances corresponding to redshifts up to 3.5
 
 pr=rr**2/(1+zz)**4
 r=numpy.random.choice(rr,size=300,p=pr/numpy.sum(pr)) #sample the distance points according to r^2/(1+z)^4 distribution
